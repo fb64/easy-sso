@@ -1,0 +1,23 @@
+version: '3'
+services:
+  keycloak:
+    image: quay.io/keycloak/keycloak:20.0.2
+    environment:
+      KEYCLOAK_ADMIN: admin
+      KEYCLOAK_ADMIN_PASSWORD: admin
+      KC_HOSTNAME: localhost
+    volumes:
+      - ./keycloak:/opt/keycloak/data/import
+    command: start-dev --import-realm
+    ports:
+      - 8080:8080
+
+  apache-oidc:
+    build: ./apache-oidc
+    ports:
+      - "8888:80"
+    environment:
+      OIDC_PROVIDER_METADATA_URL: http://keycloak:8080/realms/easy-sso/.well-known/openid-configuration
+      OIDC_CLIENT_ID: apache-oidc
+      OIDC_CLIENT_SECRET: GhnjZRoQ59gN0dNGmDqJThrbenxohknx
+      OIDC_CRYPTO_PASSPHRASE: theMegaPassPhraseOfTheDeath
