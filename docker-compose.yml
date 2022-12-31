@@ -2,6 +2,8 @@ version: '3'
 services:
   keycloak:
     image: quay.io/keycloak/keycloak:20.0.2
+    networks:
+      - public-network
     environment:
       KEYCLOAK_ADMIN: admin
       KEYCLOAK_ADMIN_PASSWORD: admin
@@ -14,6 +16,11 @@ services:
 
   apache-oidc:
     build: ./apache-oidc
+    depends_on:
+      - "keycloak"
+    networks:
+      - public-network
+      - private-network
     ports:
       - "8888:80"
     environment:
@@ -21,3 +28,7 @@ services:
       OIDC_CLIENT_ID: apache-oidc
       OIDC_CLIENT_SECRET: GhnjZRoQ59gN0dNGmDqJThrbenxohknx
       OIDC_CRYPTO_PASSPHRASE: theMegaPassPhraseOfTheDeath
+
+networks:
+  public-network:
+  private-network:
