@@ -1,1 +1,44 @@
 # Easy SSO
+
+The purpose of this repository is to show how to simply secure with free and opensource components any web application with Open ID connect and provide SSO login without modifying it.
+
+## Getting started
+[docker compose](https://docs.docker.com/compose/) is required to run this example
+
+Add the following line to your hosts file to make domain names available on your computer
+
+``127.0.0.1	python.localhost``
+
+Run the following command to run the example
+
+``docker compose up --build``
+
+Following application are now available on your computer 
+
+
+| URL                          | Credentials                      | Description         |
+|------------------------------|----------------------------------|---------------------|
+| http://localhost:8888        | N/A                              | Apache public page  |
+| http://localhost:8080        | user: admin<br>password: admin   | Keycloak admin page |
+| http://python.localhost:8080 | user: python<br>password: python | Python webapp       |
+
+
+
+## Architecture
+
+### Keycloak
+
+[Keycloak](https://www.keycloak.org/) is an opensource Identity and Access Management tool used as an Open Id Connect Identity provider.
+For this example a pre-configured realm with an A OpenID connect client named apache-oidc that allows Apache web server to authenticate user.
+
+
+### Apache HTTPD + OIDC module
+
+Apache web server is used as a reverse proxy to handle any public network request and ensure SSO protection thanks to [ODIC module](https://github.com/zmartzone/mod_auth_openidc).
+For this example a docker image based on official httpd image is build to add OIDC module and change web server configuration.
+
+### Python App
+
+Python app is a minimal python web application taht use [Flask](https://flask.palletsprojects.com/) framework.
+
+
