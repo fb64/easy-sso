@@ -29,6 +29,13 @@ services:
       OIDC_CLIENT_SECRET: GhnjZRoQ59gN0dNGmDqJThrbenxohknx
       OIDC_CRYPTO_PASSPHRASE: theMegaPassPhraseOfTheDeath
 
+  python-app:
+    build: ./python-app
+    depends_on:
+      - "apache-oidc"
+    networks:
+      - private-network
+
 networks:
   public-network:
   private-network:
