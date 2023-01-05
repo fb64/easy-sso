@@ -26,6 +26,8 @@ Following application are now available on your computer
 
 ## Architecture
 
+<img src="misc/easy-sso.svg" alt="easy-sso architecture diagram">
+
 ### Keycloak
 
 [Keycloak](https://www.keycloak.org/) is an opensource Identity and Access Management tool used as an Open Id Connect Identity provider.
