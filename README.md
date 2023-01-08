@@ -24,10 +24,10 @@ Following application are now available on your computer
 
 | URL                          | Credentials                      | Description         |
 |------------------------------|----------------------------------|---------------------|
-| http://localhost:8888        | N/A (publicly available)         | Apache public page  |
 | http://localhost:8080        | user: admin<br>password: admin   | Keycloak admin page |
-| http://python.localhost:8080 | user: python<br>password: python | Python webapp       |
-| http://java.localhost:8080   | user: user<br>password: user     | Java webapp         |
+| http://localhost:8888        | N/A (publicly available)         | Apache public page  |
+| http://python.localhost:8888 | user: python<br>password: python | Python webapp       |
+| http://java.localhost:8888   | user: user<br>password: user     | Java webapp         |
 
 
 
