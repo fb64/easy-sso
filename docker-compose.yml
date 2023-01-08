@@ -12,7 +12,7 @@ services:
       - ./keycloak:/opt/keycloak/data/import
     command: start-dev --import-realm
     ports:
-      - 8080:8080
+      - "8080:8080"
 
   apache-oidc:
     build: ./apache-oidc
@@ -31,6 +31,13 @@ services:
 
   python-app:
     build: ./python-app
+    depends_on:
+      - "apache-oidc"
+    networks:
+      - private-network
+
+  java-app:
+    build: ./java-app
     depends_on:
       - "apache-oidc"
     networks:

@@ -7,20 +7,27 @@ The purpose of this repository is to show how to simply secure with free and ope
 
 Add the following line to your hosts file to make domain names available on your computer
 
-``127.0.0.1	python.localhost``
+``127.0.0.1	python.localhost java.localhost``
 
-Run the following command to run the example
+Run the following commands to run the example
 
-``docker compose up --build``
+```Shell
+# build images
+docker compose build
+
+# run containers
+docker compose up
+```
 
 Following application are now available on your computer 
 
 
 | URL                          | Credentials                      | Description         |
 |------------------------------|----------------------------------|---------------------|
-| http://localhost:8888        | N/A                              | Apache public page  |
+| http://localhost:8888        | N/A (publicly available)         | Apache public page  |
 | http://localhost:8080        | user: admin<br>password: admin   | Keycloak admin page |
 | http://python.localhost:8080 | user: python<br>password: python | Python webapp       |
+| http://java.localhost:8080   | user: user<br>password: user     | Java webapp         |
 
 
 
@@ -41,6 +48,9 @@ For this example a docker image based on official httpd image is build to add OI
 
 ### Python App
 
-Python app is a minimal python web application taht use [Flask](https://flask.palletsprojects.com/) framework.
+Python app is a minimal python web application that uses [Flask](https://flask.palletsprojects.com/) framework.
 
+### Java App
+
+Java app is a minimal java web application that uses [Spring Boot](https://spring.io/projects/spring-boot) framework.
 
