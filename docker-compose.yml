@@ -1,7 +1,7 @@
 version: '3'
 services:
   keycloak:
-    image: quay.io/keycloak/keycloak:20.0.2
+    image: quay.io/keycloak/keycloak:21.0.1
     networks:
       - public-network
     environment:
@@ -9,7 +9,7 @@ services:
       KEYCLOAK_ADMIN_PASSWORD: admin
       KC_HOSTNAME: localhost
     volumes:
-      - ./keycloak:/opt/keycloak/data/import
+      - ./keycloak:/opt/keycloak/data/import:ro
     command: start-dev --import-realm
     ports:
       - "8080:8080"
