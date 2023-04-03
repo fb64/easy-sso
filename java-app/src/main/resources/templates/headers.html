@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Headers</title>
+    <style>
+
+        body {
+            background-color: #3C5C5E;
+            color: #FFFFFF;
+        }
+
+
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th, td {
+            padding: 8px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        tr:hover {
+            background-color: #000000;
+        }
+    </style>
+</head>
+<body>
+<h1>Headers</h1>
+<table>
+    <thead>
+    <tr>
+        <th>Header Name</th>
+        <th>Value</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="header: ${headers}">
+        <td th:text="${header.key}" />
+        <td th:text="${header.value}" />
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>
