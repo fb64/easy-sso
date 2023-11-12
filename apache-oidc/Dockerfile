@@ -1,4 +1,4 @@
-from httpd:2.4-bullseye
+FROM httpd:2.4-bullseye
 ## install openidc module
 RUN apt-get update && apt-get install -y \
 libapache2-mod-auth-openidc && rm -rf /var/lib/apt/lists/*
