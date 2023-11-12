@@ -7,7 +7,7 @@ The purpose of this repository is to show how to simply secure with free and ope
 
 Add the following line to your hosts file to make domain names available on your computer
 
-``127.0.0.1	python.localhost java.localhost keycloak.localhost``
+``127.0.0.1	python.local java.local keycloak.local static.local``
 
 Run the following commands to run the example
 
@@ -22,18 +22,18 @@ docker compose up
 Following application are now available on your computer 
 
 
-| URL                            | Credentials                      | Description         |
-|--------------------------------|----------------------------------|---------------------|
-| http://keycloak.localhost:8080 | user: admin<br>password: admin   | Keycloak admin page |
-| http://localhost:8888          | N/A (publicly available)         | Apache public page  |
-| http://python.localhost:8888   | user: python<br>password: python | Python webapp       |
-| http://java.localhost:8888     | user: user<br>password: user     | Java webapp         |
+| URL                        | Credentials                      | Description         |
+|----------------------------|----------------------------------|---------------------|
+| http://keycloak.local:8080 | user: admin<br>password: admin   | Keycloak admin page |
+| http://localhost:8888      | N/A (publicly available)         | Apache public page  |
+| http://python.local:8888   | user: python<br>password: python | Python webapp       |
+| http://java.local:8888     | user: user<br>password: user     | Java webapp         |
 
 
 ## Logout
 You can logout to both application and identity provider by using front channel logout urls
-http://java.localhost:8888/redirect_oidc?logout=get  
-http://python.localhost:8888/redirect_oidc?logout=get
+http://java.local:8888/redirect_oidc?logout=get  
+http://python.local:8888/redirect_oidc?logout=get
 
 See [module documentation](https://github.com/OpenIDC/mod_auth_openidc/wiki#9-how-do-i-logout-users) for more details about logout. 
 

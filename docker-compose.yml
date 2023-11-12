@@ -5,11 +5,11 @@ services:
     networks:
       public-network:
         aliases:
-            - keycloak.localhost
+            - keycloak.local
     environment:
       KEYCLOAK_ADMIN: admin
       KEYCLOAK_ADMIN_PASSWORD: admin
-      KC_HOSTNAME: keycloak.localhost
+      KC_HOSTNAME: keycloak.local
     volumes:
       - ./keycloak:/opt/keycloak/data/import:ro
     command: start-dev --import-realm
@@ -26,7 +26,7 @@ services:
     ports:
       - "8888:80"
     environment:
-      OIDC_PROVIDER_METADATA_URL: http://keycloak.localhost:8080/realms/easy-sso/.well-known/openid-configuration
+      OIDC_PROVIDER_METADATA_URL: http://keycloak.local:8080/realms/easy-sso/.well-known/openid-configuration
       OIDC_CLIENT_ID: apache-oidc
       OIDC_CLIENT_SECRET: GhnjZRoQ59gN0dNGmDqJThrbenxohknx
       OIDC_CRYPTO_PASSPHRASE: theMegaPassPhraseOfTheDeath
