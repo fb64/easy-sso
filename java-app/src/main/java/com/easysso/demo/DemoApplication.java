@@ -21,7 +21,8 @@ public class DemoApplication {
 	@Bean
 	public RouterFunction<ServerResponse> route(){
 		return RouterFunctions
-				.route(GET("/"), request -> ServerResponse.ok().contentType(MediaType.TEXT_HTML).render("hello.html"))
+				.route(GET("/"),
+						request -> ServerResponse.ok().contentType(MediaType.TEXT_HTML).render("hello.html"))
 				.andRoute(GET("/headers"), req ->
 						ServerResponse.ok().contentType(MediaType.TEXT_HTML)
 								.render("headers.html", Collections.singletonMap("headers",req.headers().asHttpHeaders())));
