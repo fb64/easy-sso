@@ -7,4 +7,4 @@ RUN ln -s /usr/lib/apache2/modules/mod_auth_openidc.so /usr/local/apache2/module
 ## Append sso.conf at the end of httpd.conf
 RUN echo "\n\n" >> /usr/local/apache2/conf/httpd.conf
 COPY ./sso.conf /tmp/tmp.conf
-RUN cat /tmp/tmp.conf >> /usr/local/apache2/conf/httpd.conf && rm -rf /tmp.conf
+RUN cat /tmp/tmp.conf >> /usr/local/apache2/conf/httpd.conf && rm -rf /tmp/tmp.conf
