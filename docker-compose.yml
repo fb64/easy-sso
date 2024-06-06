@@ -1,7 +1,6 @@
-version: '3'
 services:
   keycloak:
-    image: quay.io/keycloak/keycloak:22.0.5
+    image: quay.io/keycloak/keycloak:24.0.5
     networks:
       public-network:
         aliases:
