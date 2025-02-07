@@ -29,6 +29,8 @@ services:
       OIDC_CLIENT_ID: apache-oidc
       OIDC_CLIENT_SECRET: GhnjZRoQ59gN0dNGmDqJThrbenxohknx
       OIDC_CRYPTO_PASSPHRASE: theMegaPassPhraseOfTheDeath
+    volumes:
+      - ./static-app/public:/tmp/static
 
   python-app:
     build: ./python-app
