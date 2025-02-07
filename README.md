@@ -22,12 +22,23 @@ docker compose up
 Following application are now available on your computer 
 
 
-| URL                        | Credentials                      | Description         |
-|----------------------------|----------------------------------|---------------------|
-| http://keycloak.local:8080 | user: admin<br>password: admin   | Keycloak admin page |
-| http://localhost:8888      | N/A (publicly available)         | Apache public page  |
-| http://python.local:8888   | user: python<br>password: python | Python webapp       |
-| http://java.local:8888     | user: user<br>password: user     | Java webapp         |
+| URL                        | Credentials                      | Description                       |
+|----------------------------|----------------------------------|-----------------------------------|
+| http://keycloak.local:8080 | user: admin<br>password: admin   | Keycloak admin page               |
+| http://localhost:8888      | N/A (publicly available)         | Apache public page                |
+| http://python.local:8888   | user: python<br>password: python | Python webapp                     |
+| http://java.local:8888     | user: user<br>password: user     | Java webapp                       |
+| http://static.local:8888   | user: user<br>password: user     | Static webapp (static-app/public) |
+
+
+## Static App
+
+You can copy any static content to `./static-app/public` folder to add protected static application
+Example:
+```shell
+echo '<html><body><h1>My Protected static content</h1></body></html>' >> ./static-app/public/index.html
+```
+
 
 
 ## Logout
